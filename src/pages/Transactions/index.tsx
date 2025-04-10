@@ -13,7 +13,7 @@ export function Transactions() {
              <tr>
                <td width="50%">Desenvolvimento de site</td>
                <td>
-                 <PriceHighlight variant="income">
+                 <PriceHighlight $variant={"income"}>
                    R$ 12.000,00
                  </PriceHighlight>
                </td>
@@ -23,7 +23,7 @@ export function Transactions() {
              <tr>
                <td width="50%">Hambúrguer</td>
                <td>
-                 <PriceHighlight variant="outcome">
+                 <PriceHighlight $variant={"outcome"}>
                    -R$ 59,00
                  </PriceHighlight>
                </td>

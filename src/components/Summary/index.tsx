@@ -20,7 +20,7 @@ export function Summary(){
                     <strong>R$ 17.400,00</strong>
                 </SummaryCard>
     
-                <SummaryCard variant="green" >
+                <SummaryCard $variant={"green"} >
                     <header>
                         <span>Total</span>
                         <CurrencyDollar size={32} color="#fff" />
