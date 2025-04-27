@@ -1,128 +1,180 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Groceries",
-            "type": "outcome",
-            "category": "Food",
-            "price": 50.25,
-            "createdAt": "2023-03-01T10:00:00Z"
-        },
-        {
-            "id": 2,
-            "description": "Salary",
-            "type": "income",
-            "category": "Job",
-            "price": 1500.00,
-            "createdAt": "2023-03-01T12:00:00Z"
-        },
-        {
-            "id": 3,
-            "description": "Electricity Bill",
-            "type": "outcome",
-            "category": "Utilities",
-            "price": 75.00,
-            "createdAt": "2023-03-02T08:30:00Z"
-        },
-        {
-            "id": 4,
-            "description": "Internet Bill",
-            "type": "outcome",
-            "category": "Utilities",
-            "price": 45.99,
-            "createdAt": "2023-03-03T09:15:00Z"
-        },
-        {
-            "id": 5,
-            "description": "Dining Out",
-            "type": "outcome",
-            "category": "Entertainment",
-            "price": 30.50,
-            "createdAt": "2023-03-04T19:00:00Z"
-        },
-        {
-            "id": 6,
-            "description": "Gym Membership",
-            "type": "outcome",
-            "category": "Health",
-            "price": 80.00,
-            "createdAt": "2023-03-05T07:45:00Z"
-        },
-        {
-            "id": 7,
-            "description": "Freelance Work",
-            "type": "income",
-            "category": "Job",
-            "price": 500.00,
-            "createdAt": "2023-03-06T14:20:00Z"
-        },
-        {
-            "id": 8,
-            "description": "Car Maintenance",
-            "type": "outcome",
-            "category": "Transportation",
-            "price": 220.75,
-            "createdAt": "2023-03-07T11:30:00Z"
-        },
-        {
-            "id": 9,
-            "description": "Movie Tickets",
-            "type": "outcome",
-            "category": "Entertainment",
-            "price": 20.00,
-            "createdAt": "2023-03-08T20:00:00Z"
-        },
-        {
-            "id": 10,
-            "description": "Book Purchase",
-            "type": "outcome",
-            "category": "Education",
-            "price": 15.99,
-            "createdAt": "2023-03-09T16:45:00Z"
-        },
-        {
-            "id": 11,
-            "description": "Coffee",
-            "type": "outcome",
-            "category": "Food",
-            "price": 4.50,
-            "createdAt": "2023-03-10T08:15:00Z"
-        },
-        {
-            "id": 12,
-            "description": "Bonus",
-            "type": "income",
-            "category": "Job",
-            "price": 200.00,
-            "createdAt": "2023-03-10T18:00:00Z"
-        },
-        {
-            "id": 13,
-            "description": "Concert Tickets",
-            "type": "outcome",
-            "category": "Entertainment",
-            "price": 60.00,
-            "createdAt": "2023-03-11T21:00:00Z"
-        },
-        {
-            "id": 14,
-            "description": "New Shoes",
-            "type": "outcome",
-            "category": "Clothing",
-            "price": 80.00,
-            "createdAt": "2023-03-12T15:30:00Z"
-        },
-        {
-            "id": 15,
-            "description": "Gift",
-            "type": "income",
-            "category": "Other",
-            "price": 100.00,
-            "createdAt": "2023-03-13T10:00:00Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Groceries",
+      "type": "outcome",
+      "category": "Food",
+      "price": 50.25,
+      "createdAt": "2023-03-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "description": "Salary",
+      "type": "income",
+      "category": "Job",
+      "price": 1500,
+      "createdAt": "2023-03-01T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "description": "Electricity Bill",
+      "type": "outcome",
+      "category": "Utilities",
+      "price": 75,
+      "createdAt": "2023-03-02T08:30:00Z"
+    },
+    {
+      "id": 4,
+      "description": "Internet Bill",
+      "type": "outcome",
+      "category": "Utilities",
+      "price": 45.99,
+      "createdAt": "2023-03-03T09:15:00Z"
+    },
+    {
+      "id": 5,
+      "description": "Dining Out",
+      "type": "outcome",
+      "category": "Entertainment",
+      "price": 30.5,
+      "createdAt": "2023-03-04T19:00:00Z"
+    },
+    {
+      "id": 6,
+      "description": "Gym Membership",
+      "type": "outcome",
+      "category": "Health",
+      "price": 80,
+      "createdAt": "2023-03-05T07:45:00Z"
+    },
+    {
+      "id": 7,
+      "description": "Freelance Work",
+      "type": "income",
+      "category": "Job",
+      "price": 500,
+      "createdAt": "2023-03-06T14:20:00Z"
+    },
+    {
+      "id": 8,
+      "description": "Car Maintenance",
+      "type": "outcome",
+      "category": "Transportation",
+      "price": 220.75,
+      "createdAt": "2023-03-07T11:30:00Z"
+    },
+    {
+      "id": 9,
+      "description": "Movie Tickets",
+      "type": "outcome",
+      "category": "Entertainment",
+      "price": 20,
+      "createdAt": "2023-03-08T20:00:00Z"
+    },
+    {
+      "id": 10,
+      "description": "Book Purchase",
+      "type": "outcome",
+      "category": "Education",
+      "price": 15.99,
+      "createdAt": "2023-03-09T16:45:00Z"
+    },
+    {
+      "id": 11,
+      "description": "Coffee",
+      "type": "outcome",
+      "category": "Food",
+      "price": 4.5,
+      "createdAt": "2023-03-10T08:15:00Z"
+    },
+    {
+      "id": 12,
+      "description": "Bonus",
+      "type": "income",
+      "category": "Job",
+      "price": 200,
+      "createdAt": "2023-03-10T18:00:00Z"
+    },
+    {
+      "id": 13,
+      "description": "Concert Tickets",
+      "type": "outcome",
+      "category": "Entertainment",
+      "price": 60,
+      "createdAt": "2023-03-11T21:00:00Z"
+    },
+    {
+      "id": 14,
+      "description": "New Shoes",
+      "type": "outcome",
+      "category": "Clothing",
+      "price": 80,
+      "createdAt": "2023-03-12T15:30:00Z"
+    },
+    {
+      "id": 15,
+      "description": "Gift",
+      "type": "income",
+      "category": "Other",
+      "price": 100,
+      "createdAt": "2023-03-13T10:00:00Z"
+    },
+    {
+      "description": "cafe",
+      "price": 23,
+      "category": "consumível",
+      "type": "outcome",
+      "createdAt": "2025-04-26T16:15:37.113Z",
+      "id": 16
+    },
+    {
+      "description": "desenvolvimento de site",
+      "price": 1500,
+      "category": "venda",
+      "type": "income",
+      "createdAt": "2025-04-26T16:36:07.696Z",
+      "id": 17
+    },
+    {
+      "description": "antivirus",
+      "price": 150,
+      "category": "sotfwares",
+      "type": "outcome",
+      "createdAt": "2025-04-26T21:46:50.292Z",
+      "id": 18
+    },
+    {
+      "description": "pao de queijo",
+      "price": 4,
+      "category": "alimentação",
+      "type": "outcome",
+      "createdAt": "2025-04-26T21:52:12.552Z",
+      "id": 19
+    },
+    {
+      "description": "Desenvolimento de api",
+      "price": 2000,
+      "category": "receita",
+      "type": "income",
+      "createdAt": "2025-04-26T22:06:58.147Z",
+      "id": 20
+    },
+    {
+      "description": "teste",
+      "price": 2323,
+      "category": "ff",
+      "type": "outcome",
+      "createdAt": "2025-04-26T22:11:48.044Z",
+      "id": 21
+    },
+    {
+      "description": "sanduiche",
+      "price": 30,
+      "category": "alimentação",
+      "type": "outcome",
+      "createdAt": "2025-04-27T01:49:24.985Z",
+      "id": 22
+    }
+  ]
 }
-
-
-
-
