@@ -10,6 +10,7 @@ import { ArrowCircleDown, ArrowCircleUp, X } from "@phosphor-icons/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { Controller, useForm } from "react-hook-form";
+
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { useContextSelector } from "use-context-selector";
 
@@ -32,9 +33,8 @@ export function NewTransactionModal() {
     resolver: zodResolver(newTransactionFormSchema),
   });
 
-  const createNewTransaction  = useContextSelector(TransactionsContext,(context)=>{
-    return  context.createNewTransaction;
-    
+  const  createNewTransaction = useContextSelector(TransactionsContext,(context)=>{
+    return context.createTransaction;
   });
 
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {

@@ -1,69 +1,80 @@
-import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
-import { client } from "../lib/axios";
+import { ReactNode, useCallback, useEffect, useState } from 'react'
+import { createContext } from 'use-context-selector'
+import { client } from '../lib/axios'
+
 interface Transaction {
-  id: number;
-  description: string;
-  type: "income" | "outcome";
-  price: number;
-  category: string;
-  createdAt: string;
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
+  category: string
+  createdAt: string
+}
+
+interface CreateTransactionInput {
+  description: string
+  price: number
+  category: string
+  type: 'income' | 'outcome'
 }
 
 interface TransactionContextType {
-  transactions: Transaction[];
-  findTransactions: (_query?: string) => Promise<void>;
-  createNewTransaction: (_transaction: TransactionInput) => Promise<void>;
-}
-
-interface TransactionInput {
-  description: string;
-  price: number;
-  category: string;
-  type: "income" | "outcome";
+  transactions: Transaction[]
+  fetchTransactions: (query?: string) => Promise<void>
+  createTransaction: (data: CreateTransactionInput) => Promise<void>
 }
 
 interface TransactionsProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-export const TransactionsContext = createContext({} as TransactionContextType);
+export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  const findTransactions=useCallback(async (query?: string): Promise<void> => {
-    const response = await client.get("/transactions", {
+  const fetchTransactions = useCallback(async (query?: string) => {
+    const response = await client.get('transactions', {
       params: {
-        _sort: "createdAt",
-        _order: "desc",
+        _sort: 'createdAt',
+        _order: 'desc',
         q: query,
       },
-    });
-    setTransactions(response.data);
-  }, []);
-  
-  const createNewTransaction= useCallback(
-              async (transaction: TransactionInput)=> {
-              const { description, price, category, type } = transaction;
-              const respsonse = await client.post("/transactions", {
-              description,
-              price,
-              category,
-              type,
-              createdAt: new Date(),
-        });
-    setTransactions((state) => [respsonse.data, ...state]);
-  },[]);
+    })
+
+    setTransactions(response.data)
+  }, [])
+
+  const createTransaction = useCallback(
+    async (data: CreateTransactionInput) => {
+      const { description, price, category, type } = data
+
+      const response = await client.post('transactions', {
+        description,
+        price,
+        category,
+        type,
+        createdAt: new Date(),
+      })
+
+      setTransactions((state) => [response.data, ...state])
+    },
+    [],
+  )
 
   useEffect(() => {
-    findTransactions();
-  }, []);
+    fetchTransactions()
+  }, [fetchTransactions])
 
   return (
     <TransactionsContext.Provider
-      value={{ transactions, findTransactions, createNewTransaction }}
+      value={{
+        transactions,
+        fetchTransactions,
+        createTransaction,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
-  );
+  )
 }

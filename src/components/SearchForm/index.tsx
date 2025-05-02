@@ -5,7 +5,7 @@ import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { useContextSelector } from "use-context-selector";
-import { memo } from "react";
+import { memo} from "react";
 
 
 
@@ -45,7 +45,7 @@ const searchFormSchema = zod.object({
 
 type SearchFormInputs = zod.infer<typeof searchFormSchema>;
 
-  function SearchFormComponent() {
+  function SearchFormCompoenent() {
   const {
     register,
     handleSubmit,
@@ -53,12 +53,12 @@ type SearchFormInputs = zod.infer<typeof searchFormSchema>;
   } = useForm<SearchFormInputs>({
     resolver: zodResolver(searchFormSchema),
   });
-  const findTransactions  = useContextSelector(TransactionsContext,(context)=>{
-    return context.findTransactions
-  });
+  
+  const fetchTransactions = useContextSelector(TransactionsContext, (context) => context.fetchTransactions);
+
 
   async function handleSearchTransactions(data: SearchFormInputs) {
-    findTransactions(data.query);
+    fetchTransactions(data.query);
   }
 
   return (
@@ -77,5 +77,4 @@ type SearchFormInputs = zod.infer<typeof searchFormSchema>;
   );
 }
 //
-
-export const SearchForm = memo(SearchFormComponent);
+export const SearchForm = memo(SearchFormCompoenent);
