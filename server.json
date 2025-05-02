@@ -175,6 +175,14 @@
       "type": "outcome",
       "createdAt": "2025-04-27T01:49:24.985Z",
       "id": 22
+    },
+    {
+      "description": "desenvolvimento de site",
+      "price": 2000,
+      "category": "receita",
+      "type": "income",
+      "createdAt": "2025-05-01T23:05:55.947Z",
+      "id": 23
     }
   ]
 }

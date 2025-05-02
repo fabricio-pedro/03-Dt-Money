@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
 import { client } from "../lib/axios";
 interface Transaction {
   id: number;
@@ -31,7 +31,7 @@ export const TransactionsContext = createContext({} as TransactionContextType);
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  async function findTransactions(query?: string): Promise<void> {
+  const findTransactions=useCallback(async (query?: string): Promise<void> => {
     const response = await client.get("/transactions", {
       params: {
         _sort: "createdAt",
@@ -40,18 +40,20 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       },
     });
     setTransactions(response.data);
-  }
-  async function createNewTransaction(transaction: TransactionInput) {
-    const { description, price, category, type } = transaction;
-    const respsonse = await client.post("/transactions", {
-      description,
-      price,
-      category,
-      type,
-      createdAt: new Date(),
-    });
+  }, []);
+  
+  const createNewTransaction= useCallback(
+              async (transaction: TransactionInput)=> {
+              const { description, price, category, type } = transaction;
+              const respsonse = await client.post("/transactions", {
+              description,
+              price,
+              category,
+              type,
+              createdAt: new Date(),
+        });
     setTransactions((state) => [respsonse.data, ...state]);
-  }
+  },[]);
 
   useEffect(() => {
     findTransactions();
